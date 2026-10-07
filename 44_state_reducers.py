@@ -1,11 +1,9 @@
 from typing import TypedDict
 from langgraph.graph import StateGraph, START, END
-import operator
-from typing_extensions import Annotated
 
 #1 DEFINE STATE
 class State(TypedDict):
-    numbers: Annotated[list, operator.add]
+    numbers: list
     
 #2 FIRST NODE
 def add_first_number(state: State):
@@ -41,4 +39,4 @@ result= app.invoke(
 )
 
 #PRINT
-print("Final Numbers:", result["numbers"])
+print("Final numbers:", result["numbers"])
